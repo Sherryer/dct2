@@ -39,24 +39,19 @@ const DCT = (signal) => {
 
 const IDCT = (signal) => {
   const L = signal.length;
-  let coff = [];
   let tmp = Array(L * L).fill(0);
   let res = Array(L).fill('').map(() => []);
-  coff[0] = 1.0 / Math.sqrt(L);
-  for (let i = 1; i < L; i++){
-    coff[i] = Math.sqrt(2) / Math.sqrt(L);
-  }
   for (let i = 0; i < L; i++){
     for (let j = 0; j < L; j++){
       for (let x = 0; x < L; x++){
-        tmp[i*L + j] += coff[x] * signal[i][x] * Math.cos((2 * j + 1) * x * Math.PI / 2 / L);
+        tmp[i*L + j] += getCoff(x, L) * signal[i][x] * Math.cos((2 * j + 1) * x * Math.PI / 2 / L);
       }
     }
   }
   for (let i = 0; i < L; i++){
     for (let j = 0; j < L; j++){
       for (let x = 0; x < L; x++){
-        res[i][j] = (res[i][j] || 0) + coff[x] * tmp[x*L + j] * Math.cos((2 * i + 1) * x * Math.PI / 2 / L)
+        res[i][j] = (res[i][j] || 0) + getCoff(x, L) * tmp[x*L + j] * Math.cos((2 * i + 1) * x * Math.PI / 2 / L)
       }
     }
   }
