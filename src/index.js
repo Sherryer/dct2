@@ -58,7 +58,7 @@ const IDCT = (signal) => {
   return res;
 };
 
-module.exports = {
+export default {
   DCT,
   IDCT,
 }
