@@ -2,7 +2,7 @@
 
 [Discrete Cosine Transform](https://en.wikipedia.org/wiki/Discrete_cosine_transform) for 2d signal
 
-# useage
+# usage
 
 ```js
 npm install dct2 -S
