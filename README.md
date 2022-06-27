@@ -1,6 +1,10 @@
 # dct2
 
-[Discrete Cosine Transform](https://en.wikipedia.org/wiki/Discrete_cosine_transform) for 2d signal
+[Discrete Cosine Transform](https://en.wikipedia.org/wiki/Discrete_cosine_transform) for 2d signal，It has not any dependencies
+
+It is UMD module. It means it capable of working in AMD, CommonJS-like, nodejs, browrser environments. For more information go to [UMD](https://github.com/umdjs/umd).
+
+
 
 # usage
 
